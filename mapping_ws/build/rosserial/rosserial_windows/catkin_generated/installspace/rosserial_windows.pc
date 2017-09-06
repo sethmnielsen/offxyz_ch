@@ -1,0 +1,8 @@
+prefix=/home/seth/mapping_ws/install
+
+Name: rosserial_windows
+Description: Description of rosserial_windows
+Version: 0.7.6
+Cflags: 
+Libs: -L/home/seth/mapping_ws/install/lib 
+Requires: 
