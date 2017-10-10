@@ -1,11 +1,23 @@
 <launch>
+  
+  <!-- Static Transforms -->
+  <arg name="imu_position" value="0.114 -0.090 0.075   0 0 0" />
+  <node pkg="tf" type="static_transform_publisher" name="base_link2_imu"
+      args="$(arg imu_position) base_link imu_link 100" />
+
+  <arg name="camera_position" value="0.145 -0.040 0.036   0 0 0" />
+  <node pkg="tf" type="static_transform_publisher" name="base_link2_camera"
+      args="$(arg camera_position) base_link camera_link 100" />
+
+  <arg name="laser_position" value="0.000 -0.130 0.104   0 0 0" />
+  <node pkg="tf" type="static_transform_publisher" name="base_link2_laser"
+      args="$(arg laser_position) base_link laser 100" />
+
+
   <node pkg="robot_localization" type="ekf_localization_node" name="ekf_se" clear_params="true">
     <rosparam command="load" file="$(find robot_localization)/params/ekf_template.yaml" />
 
-   <!--  Placeholder for output topic remapping
-    <remap from="odometry/filtered" to=""/>
-    <remap from="accel/filtered" to=""/>
-    -->
-
+   <!--  <remap from="odometry/filtered" to="odometry/filtered0"/> -->
+   
   </node>
 </launch>

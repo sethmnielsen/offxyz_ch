@@ -1,6 +1,0 @@
-addModuleBaudrate=115200
-addModuleIsProgrammable=true
-addModulePortName=/dev/ttyACM0
-discoverModulesBaudrates=9600,115200,57600
-discoverModulesPorts=/dev/ttyUSB0
-eclipse.preferences.version=1
